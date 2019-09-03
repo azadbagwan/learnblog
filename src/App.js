@@ -26,13 +26,13 @@ function App() {
         <Navbar />
         <div className="main-content">
         <Switch>
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/services/" component={Services} />
           <Route exact path="/services/:slug" component={Singleservice} />
           <Route exact path="/about_us" component={About_us} />
           <Route exact path="/loginform" component={Loginform} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/" component={Articles} />
+          <Route exact path="/articles" component={Articles} />
           <Route exact path="/contact_us" component={Contact_us} />
           <Route component={Error} />
         </Switch>

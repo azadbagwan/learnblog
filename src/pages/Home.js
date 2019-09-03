@@ -12,8 +12,8 @@ export default function Home() {
         <div className="main-content">
 
   <Hero hero="defaultHero" >
-    <Banner title="Book an appointment" subtitle="description of the service">
-      <Link to="/services" className=" btn-primary">
+    <Banner title="Know us" subtitle="About the authors">
+      <Link to="/about_us" className=" btn-primary">
         Our services
         </Link>
       </Banner>

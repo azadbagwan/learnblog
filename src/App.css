@@ -462,6 +462,10 @@ h6 {
   letter-spacing: var(--mainSpacing);
 }
 /* end of room  */
+.article-link{
+  color: inherit;
+  text-decoration: none;
+}
 /* single room*/
 
 .single-room {

@@ -4,6 +4,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
 import Singleservice from "./pages/Singleservice";
+import SingleArticle from "./pages/SingleArticle";
 import About_us from "./pages/About_us.js";
 import Contact_us from "./pages/Contact_us";
 import Loginform from "./pages/Loginform"
@@ -13,7 +14,7 @@ import Error from "./pages/Error";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ReactGA from 'react-ga';
-
+import Article from "./components/Article"
 const trackingId = "UA-145269766-1";
 ReactGA.initialize(trackingId);
 ReactGA.pageview(window.location.pathname + window.location.search);
@@ -33,6 +34,7 @@ function App() {
           <Route exact path="/loginform" component={Loginform} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/articles" component={Articles} />
+          <Route exact path="/articles/:id" component={SingleArticle} />
           <Route exact path="/contact_us" component={Contact_us} />
           <Route component={Error} />
         </Switch>

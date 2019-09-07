@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import items from "./data"
 import { all } from 'q';
+import axios from 'axios'
 
 const RoomContext = React.createContext();
 
@@ -10,7 +11,9 @@ const RoomContext = React.createContext();
 
 
 class RoomProvider extends Component {
+    
     state={
+        all_articles:[],
        rooms:[],
        sortedRooms:[],
        featuredRooms:[],
@@ -24,8 +27,10 @@ class RoomProvider extends Component {
        maxSize:0,
        brekfast:false,
        pets:false,
+       targetId:3,
     };
     // getdata
+   
 
     componentDidMount(){
         let rooms= this.formatData(items);
@@ -33,6 +38,8 @@ class RoomProvider extends Component {
         let featuredRooms= rooms.filter(room => room.featured === true);
         let maxPrice= Math.max(...rooms.map(item=> item.price));
         let maxSize= Math.max(...rooms.map(item=> item.size));
+        
+
         this.setState({
             rooms,
             featuredRooms,
@@ -41,6 +48,20 @@ class RoomProvider extends Component {
             price:maxPrice,
             maxPrice,
             maxSize,
+        });
+        console.log("in the axios")
+        axios.get("https://learnadvanceenglish.herokuapp.com/articlesjs")
+        .then(response=>{
+       
+            console.log(response.data.json_list);
+           /* console.log("targetID is" +this.state.targetId) */
+            
+
+            this.setState({all_articles:response.data.json_list})
+            // console.log(this.state)
+        })
+        .catch(error=>{
+            console.log(error)
         });
     }
 
@@ -55,12 +76,24 @@ class RoomProvider extends Component {
         });
         return tempItems;
     }
-
-    getRoom=(slug)=>{
-        let tempRooms= [...this.state.rooms];
-        const room= tempRooms.find(room=>room.slug === slug)
-        return room;
+getId=(id)=>{
+    let tempArticle= [...this.state.all_articles];
+        const article= tempArticle.find(article=>article.id === id)
+        return article;
+}
+    getRoom=(id2)=>{
+        console.log("context id is-" +id2)
+        var id1= parseInt(id2, 10)
+        let tempRooms= [...this.state.all_articles];
+        const article= tempRooms.find(article=>article.id === id1)
+        return article;
     };
+    getRoom2=(id)=>{
+        let tempRooms2= [...this.state.all_articles];
+        const room2= tempRooms2.find(room=>room.id === id)
+        return room2;
+    };
+   
 handleChange = event => {
         
         const target =event.target
@@ -71,7 +104,9 @@ handleChange = event => {
             [name]:value
         },this.filterRooms)
     };  
-
+updateTargetId= newTargetID => {
+    this.setState({ targetId: newTargetID });
+  };
     filterRooms=()=> {
         console.log("hello")
         let {
@@ -85,7 +120,15 @@ handleChange = event => {
             sortedRooms:tempRooms
         })
     }
+    // getArticle =(id)=>{
+    //     const id2 = id
+    //     console.log("id in getroom is "+id2)
+    //     let tempArticles= [...this.state.all_articles];
+    //     console.log(tempArticles)
+    //     const article= tempArticles.find(all_article=>all_article.id === 2)
+    //     return article;
 
+    // };
     render() {
         return (
             <RoomContext.Provider value={{...this.state, getRoom: this.getRoom, handleChange: this.handleChange}}>

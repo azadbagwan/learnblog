@@ -3,6 +3,7 @@ import Articlelist from "../components/ArticlesList"
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import {Link} from "react-router-dom";
+import ArticleContainer from "../components/ArticlesContainer"
 export default function articles() {
 
    
@@ -18,7 +19,7 @@ export default function articles() {
   </Hero>
         
             <h1>Articles</h1>
-            <Articlelist/>
+            <ArticleContainer/>
         </div>
     )
 }

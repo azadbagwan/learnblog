@@ -7,6 +7,7 @@ import {Link} from "react-router-dom";
 import ServicesHome from "../components/ServicesHome"
 import FeaturedRooms from "../components/FeaturedRooms"
 import Loginform from "./Loginform"
+import ArticleContainer from "../components/ArticlesContainer"
 export default function Home() {
   return (
   <>
@@ -19,10 +20,11 @@ export default function Home() {
         </Link>
       </Banner>
   </Hero>
-  <Articlelist></Articlelist>
-  <ServicesHome></ServicesHome>
-  <FeaturedRooms></FeaturedRooms>
-  <Loginform/>
+ <ArticleContainer></ArticleContainer>
+  {/* <ServicesHome></ServicesHome> */}
+
+  {/* <FeaturedRooms></FeaturedRooms> */}
+  {/* <Loginform/> */}
 </div>
   </>);
 }

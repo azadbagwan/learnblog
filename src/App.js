@@ -15,7 +15,7 @@ import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ReactGA from 'react-ga';
 import Article from "./components/Article"
-const trackingId = "UA-145269766-1";
+const trackingId = "UA-147268422-1";
 ReactGA.initialize(trackingId);
 ReactGA.pageview(window.location.pathname + window.location.search);
 

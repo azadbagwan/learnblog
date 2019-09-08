@@ -18,20 +18,20 @@ export default class SingleArticle extends Component {
     }
   }
   static contextType= RoomContext
-componentDidMount(){
+// componentDidMount(){
  
-  var id3= parseInt(this.state.id2, 10)
-  axios.post("https://learnadvanceenglish.herokuapp.com/articlejs", this.state)
-  .then(response=>{
-      console.log(response)
-      this.setState({article1:response.data.json_list})
-      console.log("article1 is- "+this.state.article1)
-  })
-  .catch(error=>{
-      console.log(error)
-  });
+//   var id3= parseInt(this.state.id2, 10)
+//   axios.post("https://learnadvanceenglish.herokuapp.com/articlejs", this.state)
+//   .then(response=>{
+//       console.log(response)
+//       this.setState({article1:response.data.json_list})
+//       console.log("article1 is- "+this.state.article1)
+//   })
+//   .catch(error=>{
+//       console.log(error)
+//   });
  
- }
+//  }
 
 
 
@@ -39,8 +39,8 @@ componentDidMount(){
     console.log("link "+this.props.match.params.id)
     console.log("id is-"+this.state.id)
     const {getRoom}= this.context;
-    // const article= getRoom(this.state.id);
-    const article= this.state.article1;
+    const article= getRoom(this.state.id);
+    //const article= this.state.article1;
     console.log(article);
     if (!article){
       return (

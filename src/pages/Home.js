@@ -24,7 +24,7 @@ export default function Home() {
   {/* <ServicesHome></ServicesHome> */}
 
   {/* <FeaturedRooms></FeaturedRooms> */}
-  {/* <Loginform/> */}
+  <Loginform/>
 </div>
   </>);
 }

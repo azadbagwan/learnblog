@@ -45,7 +45,7 @@ export default class SingleArticle extends Component {
     if (!article){
       return (
       <div className="error">
-        <h3> No such article could be found....</h3>
+        <h3> Loading....</h3>
         <Link to="/articles" className="btn-primary">
           Back to Articles.
         </Link>

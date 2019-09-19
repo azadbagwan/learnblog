@@ -85,7 +85,7 @@ getId=(id)=>{
         console.log("context id is-" +id2)
         var id1= parseInt(id2, 10)
         let tempRooms= [...this.state.all_articles];
-        const article= tempRooms.find(article=>article.id === id1)
+        const article= tempRooms.find(article=>article.slug === id2)
         return article;
     };
     getRoom2=(id)=>{

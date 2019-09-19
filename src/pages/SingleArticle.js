@@ -11,7 +11,7 @@ export default class SingleArticle extends Component {
     super(props);
     //console.log(this.props)
     this.state={
-      id:this.props.match.params.id,
+      slug:this.props.match.params.slug,
       article1:[]
    
       
@@ -36,10 +36,10 @@ export default class SingleArticle extends Component {
 
 
   render() {
-    console.log("link "+this.props.match.params.id)
-    console.log("id is-"+this.state.id)
+    console.log("link "+this.props.match.params.slug)
+    console.log("id is-"+this.state.slug)
     const {getRoom}= this.context;
-    const article= getRoom(this.state.id);
+    const article= getRoom(this.state.slug);
     //const article= this.state.article1;
     console.log(article);
     if (!article){
@@ -54,7 +54,7 @@ export default class SingleArticle extends Component {
       
     }
     
-    const {id,title,body, image}= article;
+    const {slug,title,body, image}= article;
     const images= []
     const [mainImg,...defaultImg]= image;
     const imgtest="healthy-yoga.jpg"
@@ -76,7 +76,7 @@ export default class SingleArticle extends Component {
       <div className="single-room-info">
         <article className="desc">
         
-          <h3> Title-{id} {title}</h3>
+          <h3> Title-{slug} {title}</h3>
 
           <p><div dangerouslySetInnerHTML={{ __html: body }} /> </p>
           <div className="single-room-images">

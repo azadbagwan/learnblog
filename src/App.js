@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/loginform" component={Loginform} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/articles" component={Articles} />
-          <Route exact path="/articles/:id" component={SingleArticle} />
+          <Route exact path="/articles/:slug" component={SingleArticle} />
           <Route exact path="/contact_us" component={Contact_us} />
           <Route component={Error} />
         </Switch>

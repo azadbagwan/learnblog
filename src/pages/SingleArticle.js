@@ -56,8 +56,12 @@ export default class SingleArticle extends Component {
     
     const {id,title,body, image}= article;
     const images= []
-    const [...defaultImg]= images;
-    // console.log(defaultImg)
+    const [mainImg,...defaultImg]= image;
+    const imgtest="healthy-yoga.jpg"
+    const img1=require(`../images/${image}`)
+    console.log(image)
+    // console.log(img1)
+    
     return (
     <>
     <StyledHero img={defaultBcg}>
@@ -68,15 +72,19 @@ export default class SingleArticle extends Component {
       </Banner>
     </StyledHero>
     <section className="sigle-room">
-      <div className="single-room-images">
-        {/* { <img src={defaultBcg}/>} */}
+     
+      <div className="single-room-info">
+        <article className="desc">
+        
+          <h3> Title-{id} {title}</h3>
+
+          <p><div dangerouslySetInnerHTML={{ __html: body }} /> </p>
+          <div className="single-room-images">
+        
+        <img  src={img1} alt="product" />
         {/* {defaultImg.map((item, index)=>{
         return <img key={index} src={item} alt={title}/>;})} */}
       </div>
-      <div className="single-room-info">
-        <article className="desc">
-          <h3> Title-{id} {title}</h3>
-          <p><div dangerouslySetInnerHTML={{ __html: body }} /> </p>
         </article>
         {/* <article className="info">
           <h3>Info</h3>

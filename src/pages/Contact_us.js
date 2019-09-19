@@ -4,7 +4,7 @@ import Map from "./Map"
 
 export default function Contact_us() {
   return (
-   <div style={{ paddingTop: 50 }}>
+   <div style={{ paddingTop: 90 }}>
       <address>
         <div>
           Shop No.10/11 Parvez Complex, Shankerseth road, Near Golibar Maiden,

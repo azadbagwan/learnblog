@@ -7,6 +7,7 @@
     "babel-polyfill": "^6.26.0",
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.2.1",
+    "es6-shim": "^0.35.5",
     "eslint": "^6.3.0",
     "google-map-react": "^1.1.4",
     "google-maps-react": "^2.0.2",
@@ -41,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "exports-loader": "^0.7.0",
+    "imports-loader": "^0.8.0"
   }
 }

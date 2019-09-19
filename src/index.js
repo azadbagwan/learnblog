@@ -1,4 +1,5 @@
 import React from "react";
+import 'es6-shim';
 
 import 'react-app-polyfill/ie11'
 import 'core-js/features/array/find';

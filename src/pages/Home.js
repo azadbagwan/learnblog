@@ -15,11 +15,12 @@ export default function Home() {
 
   <Hero hero="defaultHero" >
     <Banner title="Know us" subtitle="About the authors">
-      <Link to="/about_us" className=" btn-primary">
-        Our services
+      <Link to="/articles" className=" btn-primary">
+        Start losing weight.
         </Link>
       </Banner>
   </Hero>
+  Recent Blog posts
  <ArticleContainer></ArticleContainer>
   {/* <ServicesHome></ServicesHome> */}
 
